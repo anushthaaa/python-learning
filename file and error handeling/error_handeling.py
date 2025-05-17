@@ -7,7 +7,7 @@ while True:
         a = int(a)
         b = int(b)
         sum = a + b
-        print(f"The sum is {sum}")
+        print(f"The sum of a and b is {sum}")
     except TypeError:
         print("You must enter two integrer numbers.")
     except ValueError:
