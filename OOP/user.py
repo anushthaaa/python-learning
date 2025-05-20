@@ -84,3 +84,4 @@ while True:
         print("Invalid option. Please enter 1 for Regular User or 2 for Admin.")
 
 print("\nThank you for using the User Management System!")
+
