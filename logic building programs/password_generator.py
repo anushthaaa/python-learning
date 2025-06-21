@@ -2,6 +2,7 @@ import random
 import string
 
 def password_generator(length, want_numbers=True, want_letters=True, want_symbols=True):
+    """generate password by arranging strings randomly"""
     characters = ""
 
     if want_numbers:
@@ -18,6 +19,7 @@ def password_generator(length, want_numbers=True, want_letters=True, want_symbol
     return password
 
 def check_strength(password):
+    """how strong is your password?"""
     score = 0
 
     if len(password) > 5:
@@ -31,17 +33,17 @@ def check_strength(password):
 
     if score < 2:
         return "Too weak!"
-    elif score == 2 or score == 3:
+    elif score == 3 or score == 4:
         return "Moderate, can improve."
     else:
         return "STRONG!"
 
 if __name__ == "__main__":
-    print("------ Welcome to the Password Generator ------")
+    print("\n------ Welcome to the Password Generator ------")
 
     while True:
         try:
-            length = int(input("Enter the length of the password: "))
+            length = int(input("\nEnter the length of the password: "))
         except ValueError:
             print("Enter a valid integer!")
             continue
@@ -53,7 +55,7 @@ if __name__ == "__main__":
         password = password_generator(length, want_numbers, want_letters, want_symbols)
 
         print(f"\nYour password is: {password}")
-        print("Strength check:", check_strength(password))
+        print("\nStrength check:", check_strength(password))
 
         again = input("\nGenerate another password? (y/n): ").lower()
         if again != 'y':
